@@ -11,7 +11,16 @@ const NavBar = () => {
     $(".latMenu").toggleClass("latMenuShow");
     $(".bar").toggleClass("barToggle");
     $(".bar").toggleClass("barAnimationToggle");
-    $(".blackAll").toggleClass("blackAllToggle");
+    if (!$(".blackAll").hasClass("blackAllToggle")) {
+      $(".blackAll").css("z-index", "0");
+    } else {
+      setTimeout(() => {
+        $(".blackAll").css("z-index", "-1");
+      }, 250);
+    }
+    setTimeout(() => {
+      $(".blackAll").toggleClass("blackAllToggle");
+    }, 50);
   };
 
   const handleHideLatMenu = () => {
@@ -22,9 +31,49 @@ const NavBar = () => {
   };
 
   return (
-    <div>
-      <nav className="navbar">
-        <img src={logo} alt="Logo da Prime Automação" />
+    <nav className="navbar">
+      <img src={logo} alt="Logo da Prime Automação" />
+      <ul>
+        <li>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "black",
+            }}
+            to="/"
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "black",
+            }}
+            to="/sobre"
+          >
+            Sobre
+          </Link>
+        </li>
+        <li>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "black",
+            }}
+            to="/produtos"
+          >
+            Produtos
+          </Link>
+        </li>
+      </ul>
+      <div className="menu" onClick={handleMenuClick}>
+        <span id="bar1" className="bar"></span>
+        <span id="bar2" className="bar"></span>
+        <span id="bar3" className="bar"></span>
+      </div>
+      <div className="latMenu">
         <ul>
           <li>
             <Link
@@ -60,16 +109,9 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
-        <div className="menu" onClick={handleMenuClick}>
-          <span id="bar1" className="bar"></span>
-          <span id="bar2" className="bar"></span>
-          <span id="bar3" className="bar"></span>
-        </div>
-      </nav>
-
-      <div className="latMenu"></div>
+      </div>
       <div className="blackAll" onClick={handleHideLatMenu}></div>
-    </div>
+    </nav>
   );
 };
 

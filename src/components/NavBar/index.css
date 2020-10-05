@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
-  position: relative;
 }
 
 .navbar img {
@@ -54,17 +53,33 @@
 
 .latMenu {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  gap: 10vh;
+  transform: translateX(50vw);
   background: rgb(55, 136, 95);
-  width: 45vw;
+  width: 40vw;
   height: 100vh;
   position: absolute;
   right: 0;
   top: 0;
   transition: 0.2s ease;
-  transform: translateX(50vw);
   z-index: 2;
+}
+
+.latMenu ul {
+  margin-top: 10vh;
+}
+
+.latMenu ul li {
+  text-align: start;
+  display: block !important;
+  margin: 12.5vh 12.5vh 22.5vh 27.5vw;
+  font-size: 1.5rem;
+}
+
+.latMenu ul li a {
+  color: white !important;
 }
 
 .latMenuShow {
@@ -86,6 +101,7 @@
 
 .blackAllToggle {
   opacity: 1;
+  z-index: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -106,5 +122,11 @@
 @media screen and (max-width: 375px) {
   .navbar img {
     width: 45vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .latMenu {
+    display: none;
   }
 }
