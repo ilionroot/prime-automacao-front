@@ -2,9 +2,9 @@ import React from "react";
 
 import "./index.css";
 
-const Container = ({ children, style, className }) => {
+const Container = ({ children, style, className, id }) => {
   return (
-    <div className="container" style={style}>
+    <div id={id} className="container" style={style}>
       {children}
     </div>
   );

@@ -6,6 +6,9 @@
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
+  box-shadow: 0 1px 75px -35px black;
+  position: fixed;
+  z-index: 2;
 }
 
 .navbar img {
@@ -33,6 +36,7 @@
   background: rgb(55, 136, 95);
   margin: 0.35vh;
   transition: 0.2s ease;
+  border-radius: 25px;
 }
 
 .barToggle {
@@ -40,7 +44,7 @@
 }
 
 .barAnimationToggle:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 7.5px);
+  transform: rotate(45deg) translate(6px, 8px);
 }
 
 .barAnimationToggle:nth-child(2) {

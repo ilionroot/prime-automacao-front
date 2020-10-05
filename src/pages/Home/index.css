@@ -1,0 +1,138 @@
+.title {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-left: 5vw;
+  width: 60vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  color: whitesmoke;
+  margin-left: 10%;
+  font-size: 1.75rem;
+}
+
+.goAhead {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%);
+  background: rgba(0, 0, 0, 0.125);
+  padding: 20px;
+  width: 60%;
+  height: 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.goAhead::before {
+  content: "";
+  width: 7.5px;
+  height: 100%;
+  background: rgba(55, 136, 95, 0.5);
+  position: absolute;
+  left: 0;
+}
+
+.goAhead::after {
+  content: "";
+  width: 7.5px;
+  height: 100%;
+  background: rgba(55, 136, 95, 0.5);
+  position: absolute;
+  right: 0;
+}
+
+.grid {
+  width: 75vw;
+  height: 60vh;
+  display: grid;
+  grid-template-areas:
+    "logo logo text3"
+    "logo logo text4"
+    "text1 text2 continue";
+  text-align: center;
+}
+
+.grid::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  border-left: 3px solid lightgray;
+  border-bottom: 3px solid lightgray;
+  position: absolute;
+  left: 2.75%;
+  top: 189%;
+  border-radius: 2.5px;
+}
+
+.grid::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  border-right: 3px solid lightgray;
+  border-top: 3px solid lightgray;
+  position: absolute;
+  left: 94%;
+  top: 115%;
+  border-radius: 2.5px;
+}
+
+.grid img {
+  grid-area: logo;
+  width: 60%;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid #t1 {
+  grid-area: text1;
+  align-self: center;
+  justify-self: center;
+  width: 50%;
+}
+
+.grid #t2 {
+  grid-area: text2;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid #t3 {
+  grid-area: text3;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid #t4 {
+  grid-area: text4;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid #continue {
+  grid-area: continue;
+  align-self: center;
+  justify-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .grid img {
+    width: 30%;
+  }
+
+  .grid {
+    width: 70vw;
+    height: 35vw;
+  }
+
+  .title h1 {
+    margin: 0;
+  }
+}
