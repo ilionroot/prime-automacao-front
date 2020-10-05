@@ -1,0 +1,110 @@
+.navbar {
+  background: whitesmoke;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar img {
+  width: 13vw;
+}
+
+.navbar li {
+  display: inline;
+  margin: 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .menu {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.navbar .menu .bar {
+  width: 35px;
+  height: 5px;
+  background: rgb(55, 136, 95);
+  margin: 0.35vh;
+  transition: 0.2s ease;
+}
+
+.barToggle {
+  background: white !important;
+}
+
+.barAnimationToggle:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 7.5px);
+}
+
+.barAnimationToggle:nth-child(2) {
+  opacity: 0;
+}
+
+.barAnimationToggle:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -9px);
+}
+
+.latMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  background: rgb(55, 136, 95);
+  width: 45vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.2s ease;
+  transform: translateX(50vw);
+  z-index: 2;
+}
+
+.latMenuShow {
+  transform: translateX(0);
+}
+
+.blackAll {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.2s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+.blackAllToggle {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar img {
+    width: 25vw;
+  }
+
+  .navbar li {
+    display: none;
+  }
+
+  .navbar .menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .navbar img {
+    width: 45vw;
+  }
+}

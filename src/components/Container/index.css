@@ -1,0 +1,6 @@
+.container {
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden auto;
+  z-index: 1;
+}
