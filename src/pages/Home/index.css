@@ -15,11 +15,79 @@
   font-size: 1.75rem;
 }
 
+.imageGrid {
+  width: 70vh;
+  height: 70vh;
+  margin: 0 0 5vw 14vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "img1 img1 img4"
+    "img1 img1 img5"
+    "img2 img3 img6";
+  gap: 2vw;
+  padding: 2vw;
+}
+
+.menuImage {
+  border-radius: 10px;
+  box-shadow: 0 0 25px -15px black;
+}
+
+#menu1 {
+  grid-area: img1;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 1.75s ease;
+}
+
+#menu2 {
+  grid-area: img2;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+#menu3 {
+  grid-area: img3;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+#menu4 {
+  grid-area: img4;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+#menu5 {
+  grid-area: img5;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 1.25s ease;
+}
+
+#menu6 {
+  grid-area: img6;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transition: 1.5s ease;
+}
+
 .goAhead {
   position: absolute;
   bottom: 3%;
   left: 50%;
   transform: translate(-50%);
+  color: whitesmoke;
   background: rgba(0, 0, 0, 0.125);
   padding: 20px;
   width: 60%;
@@ -29,6 +97,13 @@
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.goAhead:hover {
+  box-shadow: 0 0 50px -20px whitesmoke;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 1.025rem;
 }
 
 .goAhead::before {
@@ -58,6 +133,25 @@
     "logo logo text4"
     "text1 text2 continue";
   text-align: center;
+  padding: 50px;
+  font-size: 0.85rem;
+}
+
+#second-container {
+  box-shadow: 0 0 50px -25px rgba(55, 136, 95);
+  border-radius: 50px;
+  width: 95vw;
+  height: 80vh;
+  margin: 10vh auto 0 auto;
+}
+
+#second-container #latImg {
+  width: 30vw;
+  height: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-attachment: fixed;
 }
 
 .grid::before {
@@ -67,8 +161,8 @@
   border-left: 3px solid lightgray;
   border-bottom: 3px solid lightgray;
   position: absolute;
-  left: 2.75%;
-  top: 189%;
+  left: 5%;
+  top: 178%;
   border-radius: 2.5px;
 }
 
@@ -79,47 +173,161 @@
   border-right: 3px solid lightgray;
   border-top: 3px solid lightgray;
   position: absolute;
-  left: 94%;
+  left: 65%;
   top: 115%;
   border-radius: 2.5px;
 }
 
-.grid img {
+.grid #logoIconGrid {
   grid-area: logo;
   width: 60%;
   align-self: center;
   justify-self: center;
+  transition: 2.5s ease;
+  transform: translateY(-50vw);
+  opacity: 0;
 }
 
 .grid #t1 {
   grid-area: text1;
   align-self: center;
   justify-self: center;
-  width: 50%;
+  width: 100%;
+  transition: 1s ease;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .grid #t2 {
   grid-area: text2;
   align-self: center;
   justify-self: center;
+  transition: 1.5s ease;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .grid #t3 {
   grid-area: text3;
   align-self: center;
   justify-self: center;
+  width: 75%;
+  transition: 2s ease;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .grid #t4 {
   grid-area: text4;
   align-self: center;
   justify-self: center;
+  width: 75%;
+  transition: 2.5s ease;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .grid #continue {
   grid-area: continue;
   align-self: center;
   justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  position: relative;
+  padding: 50px;
+  cursor: pointer;
+  transition: 2s ease;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.grid #continue svg {
+  width: 2vw;
+  height: 2vw;
+  stroke: rgb(55, 136, 95);
+  stroke-width: 2;
+  fill: rgba(55, 136, 95, 0.75);
+  animation: continueAnimation 1.5s ease infinite;
+}
+
+.specs {
+  width: 17.5vw;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2.5px 15px -7.5px black;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.specs .specsImage {
+  width: 100%;
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+}
+
+.specs .specsFooter {
+  width: 100%;
+  height: 30%;
+  background: rgb(55, 136, 95);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  padding: 10px;
+}
+
+.specs .specsFooter p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.footerContainer {
+  height: 100%;
+  background: rgb(70, 70, 70);
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerArticle {
+  height: 100%;
+  margin-bottom: 4.5vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerArticle #logo {
+  width: 60%;
+}
+
+@keyframes continueAnimation {
+  0%,
+  100% {
+    position: absolute;
+    top: 37.5%;
+    right: 0;
+  }
+
+  50% {
+    position: absolute;
+    top: 42.5%;
+    right: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -132,7 +340,15 @@
     height: 35vw;
   }
 
+  .title {
+    width: 30vw;
+    height: 30vh;
+    text-align: start;
+    padding: 25px;
+  }
+
   .title h1 {
+    font-size: 2.4rem;
     margin: 0;
   }
 }

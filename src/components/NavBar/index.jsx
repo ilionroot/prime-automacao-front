@@ -12,8 +12,10 @@ const NavBar = () => {
     $(".bar").toggleClass("barToggle");
     $(".bar").toggleClass("barAnimationToggle");
     if (!$(".blackAll").hasClass("blackAllToggle")) {
+      $(".blackAll").css("display", "initial");
       $(".blackAll").css("z-index", "0");
     } else {
+      $(".blackAll").css("display", "none");
       setTimeout(() => {
         $(".blackAll").css("z-index", "-1");
       }, 250);
@@ -27,7 +29,18 @@ const NavBar = () => {
     $(".latMenu").removeClass("latMenuShow");
     $(".bar").removeClass("barToggle");
     $(".bar").removeClass("barAnimationToggle");
-    $(".blackAll").removeClass("blackAllToggle");
+    if (!$(".blackAll").hasClass("blackAllToggle")) {
+      $(".blackAll").css("display", "initial");
+      $(".blackAll").css("z-index", "0");
+    } else {
+      $(".blackAll").css("display", "none");
+      setTimeout(() => {
+        $(".blackAll").css("z-index", "-1");
+      }, 250);
+    }
+    setTimeout(() => {
+      $(".blackAll").removeClass("blackAllToggle");
+    }, 50);
   };
 
   return (
