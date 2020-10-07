@@ -1,0 +1,152 @@
+.footerContainer {
+  height: 100%;
+  background: rgb(70, 70, 70);
+  color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerArticle {
+  height: 100%;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerArticle .spacer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.footerArticle ul li {
+  margin: 30px;
+}
+
+.footerArticle ul li a {
+  color: lightgray;
+  text-decoration: none;
+}
+
+.footerArticleAbsolute {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 12.5vw;
+  height: 100%;
+  left: 2vw;
+  top: 0;
+}
+
+.footerArticleAbsolute #logo {
+  width: 12.5vw;
+}
+
+.spacer {
+  height: auto;
+  width: 300px;
+  margin: 15px 0;
+}
+
+.spacer #space1 {
+  width: 67.5px;
+  height: 3px;
+  background: lightgray;
+  margin-bottom: 7px;
+}
+
+.spacer #space2 {
+  width: 125px;
+  height: 3px;
+  background: rgb(55, 136, 95);
+}
+
+svg {
+  fill: rgb(55, 136, 95);
+  margin: 10.5px;
+}
+
+.footerArticle .social-media {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.footerContainer #socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+.footerContainer #socials #contact-us-social-media-footer {
+  align-self: center;
+}
+
+.footerContainer #socials .spacer {
+  align-self: center;
+}
+
+.footerContainer #socials #facebook a,
+.footerContainer #socials #instagram a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+@media screen and (max-width: 768px) {
+  .footerContainer {
+    gap: 5vw;
+  }
+
+  .footerArticle {
+    margin-top: 17.3vh;
+    width: auto;
+  }
+
+  .footerArticleAbsolute {
+    width: 25vw;
+  }
+
+  .footerArticleAbsolute #logo {
+    width: 25vw;
+  }
+
+  .footerContainer #socials {
+    font-size: 0.75rem;
+  }
+
+  .footerContainer #contact-us-social-media-footer {
+    font-size: 1rem;
+  }
+
+  svg {
+    width: 5vw;
+  }
+
+  .footerContainer .social-media {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #socials {
+    margin: 18.225vh 1.5vw 0 0;
+  }
+
+  #socials #midia {
+    width: 100%;
+  }
+
+  #socials #copy {
+    bottom: 5vh;
+  }
+}

@@ -18,7 +18,7 @@
 .imageGrid {
   width: 70vh;
   height: 70vh;
-  margin: 0 0 5vw 14vw;
+  margin: 0 5vw 5vw 14vw;
   overflow: hidden;
   display: grid;
   grid-template-areas:
@@ -152,6 +152,7 @@
   background-repeat: no-repeat;
   background-size: 30vw;
   background-attachment: fixed;
+  background-image: url("/ncrBackground.png");
 }
 
 .grid::before {
@@ -173,7 +174,7 @@
   border-right: 3px solid lightgray;
   border-top: 3px solid lightgray;
   position: absolute;
-  left: 65%;
+  left: 67.5%;
   top: 115%;
   border-radius: 2.5px;
 }
@@ -261,6 +262,7 @@
   box-shadow: 0 2.5px 15px -7.5px black;
   cursor: pointer;
   opacity: 0;
+  margin: 2.5vw;
   transform: scale(0);
 }
 
@@ -311,30 +313,6 @@
   color: whitesmoke;
 }
 
-.footerContainer {
-  height: 100%;
-  background: rgb(70, 70, 70);
-  color: whitesmoke;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2vw;
-  position: relative;
-  overflow: hidden;
-}
-
-.footerArticle {
-  height: 100%;
-  margin-bottom: 4.5vh;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.footerArticle #logo {
-  width: 60%;
-}
-
 @keyframes continueAnimation {
   0%,
   100% {
@@ -350,13 +328,123 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  #first-container {
+    flex-direction: row;
+  }
+
+  #first-container .imageGrid {
+    width: 100vw;
+    margin: 0;
+    gap: 5vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title img4"
+      "title title img5"
+      "img2 img3 img6";
+    height: 50vh;
+  }
+
+  .title {
+    grid-area: title;
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 0 0 2vw;
+  }
+
+  #first-container #menu1 {
+    display: none;
+  }
+
+  #first-container #menu2 {
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+    display: none;
+  }
+
+  #first-container #menu3 {
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  #first-container #menu4 {
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+    display: none;
+  }
+
+  #first-container #menu5 {
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  #first-container #menu6 {
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  #second-container .grid {
+    overflow: hidden;
+    height: 100%;
+    grid-template-areas:
+      "logo "
+      "text1"
+      "text2"
+      "text3"
+      "text4"
+      "continue"
+      "continue";
+    text-align: center;
+    padding: 25px;
+    padding-top: 50px;
+    gap: 10vh;
+    font-size: 0.8rem;
+  }
+
+  #second-container #logoIconGrid {
+    margin: 25px 0 50px 0;
+    width: 50%;
+  }
+
+  #second-container .grid::before {
+    left: 9.5%;
+    top: 181.5%;
+  }
+
+  #second-container .grid::after {
+    left: 57%;
+    top: 112%;
+  }
+
+  #second-container #latImg {
+    background-size: contain;
+    background-image: url("/ncrBackground-mobile.png");
+  }
+
+  #third-container {
+    flex-direction: column;
+  }
+
+  #third-container .specs {
+    width: 90%;
+    height: 21.5%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .grid img {
     width: 30%;
   }
 
   .grid {
-    width: 70vw;
+    width: 83vw;
     height: 35vw;
   }
 
@@ -365,6 +453,13 @@
     height: 30vh;
     text-align: start;
     padding: 25px;
+    position: absolute;
+    left: 0;
+    top: 27.5%;
+  }
+
+  .imageGrid {
+    margin-left: 50%;
   }
 
   .title h1 {

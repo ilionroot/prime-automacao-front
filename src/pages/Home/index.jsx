@@ -4,7 +4,6 @@ import $ from "jquery";
 
 import containerBackground from "../../assets/images/firstContainerBackground.jpg";
 import logoWithOutText from "../../assets/images/logo-without-text.png";
-import ncrBackground from "../../assets/images/ncrBackground.png";
 import colibriPointOfSale from "../../assets/images/colibri-point-of-sale.jpg";
 import colibriPedMobile from "../../assets/images/colibriPedMobile.jpg";
 import colibriBackOffice from "../../assets/images/colibriBackOffice.png";
@@ -15,9 +14,9 @@ import menu3 from "../../assets/images/menu3.png";
 import menu4 from "../../assets/images/menu4.png";
 import menu5 from "../../assets/images/menu5.png";
 import menu6 from "../../assets/images/menu6.png";
-import logoWhite from "../../assets/images/logo-white.png";
 
 import Container from "../../components/Container";
+import Footer from "../../components/Footer";
 
 import "./index.css";
 
@@ -210,11 +209,12 @@ const Home = () => {
           alignItems: "center",
           position: "relative",
         }}
+        id="first-container"
       >
-        <div className="title">
-          <h1>Bem-vindo a Prime Automação</h1>
-        </div>
         <div className="imageGrid">
+          <div className="title">
+            <h1>Bem-vindo a Prime Automação</h1>
+          </div>
           <img
             id="menu1"
             className="menuImage"
@@ -301,10 +301,7 @@ const Home = () => {
             </svg>
           </span>
         </div>
-        <div
-          id="latImg"
-          style={{ backgroundImage: "url(" + ncrBackground + ")" }}
-        ></div>
+        <div id="latImg"></div>
       </Container>
       <Container
         id="third-container"
@@ -312,7 +309,6 @@ const Home = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: "5vw",
         }}
       >
         <span id="spec1" className="specs">
@@ -364,22 +360,7 @@ const Home = () => {
         </span>
       </Container>
       <Container style={{ height: "65vh" }}>
-        <footer className="footerContainer">
-          <span
-            className="footerArticle"
-            style={{ justifyContent: "space-between" }}
-          >
-            <img id="logo" src={logoWhite} alt="Logo do footer" />
-          </span>
-          <h5
-            style={{
-              position: "absolute",
-              bottom: "2.2vh",
-            }}
-          >
-            © primeautomacao.net.br 2020
-          </h5>
-        </footer>
+        <Footer />
       </Container>
     </>
   );

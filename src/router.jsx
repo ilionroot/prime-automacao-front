@@ -11,7 +11,7 @@ const Router = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/sobre" render={() => <h1>Sobre</h1>} />
+        <Route path="/about" render={() => <h1>Sobre</h1>} />
         <Route path="/produtos" render={() => <h1>Produtos</h1>} />
       </Switch>
     </BrowserRouter>
