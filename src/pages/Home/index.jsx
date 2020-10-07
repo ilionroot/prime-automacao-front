@@ -23,11 +23,12 @@ import "./index.css";
 
 const Home = () => {
   let secondContainer = useRef();
+  let thirdContainer = useRef();
   let isHide = useRef(true);
+  let isHide1 = useRef(true);
   let noLag = useRef(1);
 
   const handleGoAheadClick = () => {
-    console.log($("#second-container").offset().top);
     $("html, body").animate(
       {
         scrollTop:
@@ -94,6 +95,8 @@ const Home = () => {
 
       secondContainer.current =
         $("#second-container").offset().top - window.innerHeight * 0.15;
+      thirdContainer.current =
+        $("#third-container").offset().top - window.innerHeight * 0.15;
 
       $("body, html").on("scroll", () => {
         switch (noLag.current) {
@@ -101,16 +104,27 @@ const Home = () => {
             if (
               Math.round(
                 $("#second-container").offset().top - window.innerHeight * 0.15
-              ) -
-                20 <
-                Math.round(secondContainer.current * 0.092219020172911) &&
+              ) >
+                Math.round(secondContainer.current * 0.059083048224831) - 20 &&
               Math.round(
                 $("#second-container").offset().top - window.innerHeight * 0.15
-              ) +
-                20 <
-                Math.round(secondContainer.current * 0.092219020172911)
+              ) <
+                Math.round(secondContainer.current * 0.059083048224831) + 20
             ) {
               isHide.current = !isHide.current;
+            }
+
+            if (
+              Math.round(
+                $("#third-container").offset().top - window.innerHeight * 0.15
+              ) >
+                Math.round(thirdContainer.current * 0.059083048224831) - 20 &&
+              Math.round(
+                $("#third-container").offset().top - window.innerHeight * 0.15
+              ) <
+                Math.round(thirdContainer.current * 0.059083048224831) + 20
+            ) {
+              isHide1.current = !isHide1.current;
             }
 
             if (!isHide.current) {
@@ -127,6 +141,20 @@ const Home = () => {
               $("#t3").css("transform", "scale(1)");
               $("#t4").css("opacity", 1);
               $("#t4").css("transform", "scale(1)");
+            }
+
+            if (!isHide1.current) {
+              $("#spec1").css("transform", "scale(1)");
+              $("#spec1").css("opacity", 1);
+              $("#spec2").css("transform", "scale(1)");
+              $("#spec2").css("opacity", 1);
+              $("#spec3").css("transform", "scale(1)");
+              $("#spec3").css("opacity", 1);
+              $("#spec4").css("transform", "scale(1)");
+              $("#spec4").css("opacity", 1);
+              setTimeout(() => {
+                $(".specs").css("transition", "0.2s");
+              }, 1500);
             }
 
             noLag.current = 1;
@@ -287,7 +315,7 @@ const Home = () => {
           gap: "5vw",
         }}
       >
-        <span className="specs">
+        <span id="spec1" className="specs">
           <div
             className="specsImage"
             style={{
@@ -301,7 +329,7 @@ const Home = () => {
             </p>
           </article>
         </span>
-        <span className="specs">
+        <span id="spec2" className="specs">
           <div
             className="specsImage"
             style={{
@@ -312,7 +340,7 @@ const Home = () => {
             <p>Solução mobile: Pedido e Pagamento</p>
           </article>
         </span>
-        <span className="specs">
+        <span id="spec3" className="specs">
           <div
             className="specsImage"
             style={{
@@ -323,7 +351,7 @@ const Home = () => {
             <p>Retaguarda: Controle de estoque e financeiro</p>
           </article>
         </span>
-        <span className="specs">
+        <span id="spec4" className="specs">
           <div
             className="specsImage"
             style={{

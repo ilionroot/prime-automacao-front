@@ -259,8 +259,28 @@
   position: relative;
   border-radius: 10px;
   box-shadow: 0 2.5px 15px -7.5px black;
-  transition: 0.2s ease;
   cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+}
+
+#spec1 {
+  transition: 0.75s ease;
+}
+
+#spec2 {
+  transition: 1s ease;
+  transform: scale(0);
+}
+
+#spec3 {
+  transition: 1.25s ease;
+  transform: scale(0);
+}
+
+#spec4 {
+  transition: 1.5s ease;
+  transform: scale(0);
 }
 
 .specs .specsImage {
