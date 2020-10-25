@@ -1,0 +1,19 @@
+.spacer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.spacer #space1 {
+  width: 67.5px;
+  height: 3px;
+  background: lightgray;
+  margin-bottom: 7px;
+}
+
+.spacer #space2 {
+  width: 125px;
+  height: 3px;
+  background: rgb(55, 136, 95);
+}

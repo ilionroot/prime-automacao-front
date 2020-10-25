@@ -1,0 +1,61 @@
+.infDiv {
+  box-shadow: 0 0 50px -25px rgba(55, 136, 95);
+  border-radius: 50px;
+  width: 95vw;
+  height: 80vh;
+  padding: 35px;
+}
+
+.infDiv #latImg {
+  width: 30vw;
+  height: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-attachment: fixed;
+  -moz-background-attachment: fixed;
+  -ms-background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  -o-background-attachment: fixed;
+  background-image: url("/ncrBackground.png");
+}
+
+@media screen and (max-width: 768px) {
+  .infDiv .grid {
+    overflow: hidden;
+    height: 100%;
+    grid-template-areas:
+      "logo "
+      "text1"
+      "text2"
+      "text3"
+      "text4"
+      "continue"
+      "continue";
+    text-align: center;
+    padding: 25px;
+    padding-top: 50px;
+    gap: 10vh;
+    font-size: 0.8rem;
+  }
+
+  .infDiv #logoIconGrid {
+    margin: 25px 0 50px 0;
+    width: 50%;
+  }
+
+  .infDiv .grid::before {
+    left: 9.5%;
+    top: 181.5%;
+  }
+
+  .infDiv .grid::after {
+    left: 57%;
+    top: 112%;
+  }
+
+  .infDiv #latImg {
+    background-size: contain;
+    background-image: url("/ncrBackground-mobile.png");
+  }
+}

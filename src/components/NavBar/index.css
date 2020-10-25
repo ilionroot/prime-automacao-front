@@ -1,12 +1,15 @@
 .navbar {
   background: whitesmoke;
   height: 10vh;
-  width: 100vw;
+  width: 90vw;
   display: flex;
   align-items: center;
+  border-radius: 0 0 45px 45px;
   justify-content: space-around;
   overflow: hidden;
   box-shadow: 0 1px 75px -35px black;
+  left: 50%;
+  transform: translate(-50%);
   position: fixed;
   z-index: 2;
 }

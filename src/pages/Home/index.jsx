@@ -8,6 +8,7 @@ import colibriPointOfSale from "../../assets/images/colibri-point-of-sale.jpg";
 import colibriPedMobile from "../../assets/images/colibriPedMobile.jpg";
 import colibriBackOffice from "../../assets/images/colibriBackOffice.png";
 import colibriCloud from "../../assets/images/colibriCloud.png";
+import thirdContainerBackgroundImage from '../../assets/images/image1.webp';
 import menu1 from "../../assets/images/menu1.png";
 import menu2 from "../../assets/images/menu2.png";
 import menu3 from "../../assets/images/menu3.png";
@@ -17,6 +18,7 @@ import menu6 from "../../assets/images/menu6.png";
 
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
+import Spacer from '../../components/Spacer';
 
 import "./index.css";
 
@@ -41,8 +43,8 @@ const Home = () => {
     $("html, body").animate(
       {
         scrollTop:
-          $("#third-container").offset().top * 1.575 +
-          $("#second-container").offset().top * 1.575,
+          $("#third-container").offset().top * 1.6925 +
+          $("#second-container").offset().top * 1.6925,
       },
       1000
     );
@@ -70,6 +72,11 @@ const Home = () => {
         $("#menu6").css("opacity", 1);
       };
 
+      const titleAnimation = () => {
+        $('.title').css('opacity', 1);
+        $('.title').css('transform', 'translateX(0)');
+      };
+
       const transitionProps = () => {
         $("#menu1").css("transition", ".2s ease");
         $("#menu2").css("transition", ".2s ease");
@@ -79,7 +86,10 @@ const Home = () => {
         $("#menu6").css("transition", ".2s ease");
       };
 
-      setTimeout(initialImages, 500);
+      setTimeout(() => {
+        initialImages();
+        titleAnimation();
+      }, 500);
       setTimeout(transitionProps, 1750);
 
       const images = [...document.querySelectorAll(".menuImage")];
@@ -95,7 +105,7 @@ const Home = () => {
       secondContainer.current =
         $("#second-container").offset().top - window.innerHeight * 0.15;
       thirdContainer.current =
-        $("#third-container").offset().top - window.innerHeight * 0.15;
+        $("#third-container").offset().top - window.innerHeight * 0.2;
 
       $("body, html").on("scroll", () => {
         switch (noLag.current) {
@@ -115,11 +125,11 @@ const Home = () => {
 
             if (
               Math.round(
-                $("#third-container").offset().top - window.innerHeight * 0.15
+                $("#third-container").offset().top - window.innerHeight * 0.2
               ) >
                 Math.round(thirdContainer.current * 0.059083048224831) - 20 &&
               Math.round(
-                $("#third-container").offset().top - window.innerHeight * 0.15
+                $("#third-container").offset().top - window.innerHeight * 0.2
               ) <
                 Math.round(thirdContainer.current * 0.059083048224831) + 20
             ) {
@@ -200,17 +210,14 @@ const Home = () => {
       </Helmet>
       <Container
         style={{
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundImage: "url(" + containerBackground + ")",
           display: "flex",
           alignItems: "center",
-          position: "relative",
         }}
         id="first-container"
       >
+        <div id="background" style={{
+          backgroundImage: "url(" + containerBackground + ")",
+        }}/>
         <div className="imageGrid">
           <div className="title">
             <h1>Bem-vindo a Prime Automação</h1>
@@ -256,6 +263,9 @@ const Home = () => {
           <p>Veja mais...</p>
         </div>
       </Container>
+      <Spacer style={{
+          margin: '10vh auto 0 auto',
+        }}/>
       <Container
         id="second-container"
         style={{
@@ -303,14 +313,24 @@ const Home = () => {
         </div>
         <div id="latImg"></div>
       </Container>
+      <Spacer style={{
+          top: '5vh',
+          margin: '10vh auto 0 auto',
+          zIndex: 2,
+        }}/>
       <Container
         id="third-container"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          // background: `url(${thirdContainerBackgroundImage})`,
+          // backgroundSize: 'cover',
+          // backgroundRepeat: 'no-repeat',
+          // backgroundPosition: 'center center',
         }}
       >
+        <img src={thirdContainerBackgroundImage} alt="background"/>
         <span id="spec1" className="specs">
           <div
             className="specsImage"

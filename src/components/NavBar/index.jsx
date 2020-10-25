@@ -64,7 +64,7 @@ const NavBar = () => {
               textDecoration: "none",
               color: "black",
             }}
-            to="/sobre"
+            to="/about"
           >
             Sobre
           </Link>
@@ -75,7 +75,7 @@ const NavBar = () => {
               textDecoration: "none",
               color: "black",
             }}
-            to="/produtos"
+            to="/products"
           >
             Produtos
           </Link>
@@ -105,7 +105,7 @@ const NavBar = () => {
                 textDecoration: "none",
                 color: "black",
               }}
-              to="/sobre"
+              to="/about"
             >
               Sobre
             </Link>
@@ -116,7 +116,7 @@ const NavBar = () => {
                 textDecoration: "none",
                 color: "black",
               }}
-              to="/produtos"
+              to="/products"
             >
               Produtos
             </Link>

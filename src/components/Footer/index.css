@@ -8,6 +8,7 @@
   padding: 2vw;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .footerArticle {
@@ -16,13 +17,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.footerArticle .spacer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
 }
 
 .footerArticle ul li {
@@ -47,25 +41,6 @@
 
 .footerArticleAbsolute #logo {
   width: 12.5vw;
-}
-
-.spacer {
-  height: auto;
-  width: 300px;
-  margin: 15px 0;
-}
-
-.spacer #space1 {
-  width: 67.5px;
-  height: 3px;
-  background: lightgray;
-  margin-bottom: 7px;
-}
-
-.spacer #space2 {
-  width: 125px;
-  height: 3px;
-  background: rgb(55, 136, 95);
 }
 
 svg {

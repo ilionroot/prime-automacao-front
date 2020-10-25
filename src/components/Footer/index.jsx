@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import logoWhite from "../../assets/images/logo-white.png";
 
+import Spacer from '../Spacer';
+
 import "./index.css";
 
 const Footer = () => {
@@ -10,17 +12,13 @@ const Footer = () => {
     <footer className="footerContainer">
       <span className="footerArticleAbsolute" style={{}}>
         <img id="logo" src={logoWhite} alt="Logo do footer" />
-        <span className="spacer">
-          <div id="space1"></div>
-          <div id="space2"></div>
-        </span>
+        <Spacer style={{
+          alignItems: 'flex-start'
+        }}/>
       </span>
       <span className="footerArticle" id="quick-links">
         <h3>Quick Links</h3>
-        <span className="spacer">
-          <div id="space1"></div>
-          <div id="space2"></div>
-        </span>
+        <Spacer />
         <ul>
           <li>
             <Link to="/home">• Home</Link>
@@ -38,10 +36,7 @@ const Footer = () => {
       </span>
       <span className="footerArticle" id="socials">
         <h3 id="contact-us-social-media-footer">Contact Us</h3>
-        <span className="spacer">
-          <div id="space1"></div>
-          <div id="space2"></div>
-        </span>
+        <Spacer />
 
         <div id="midia">
           <span id="facebook">
