@@ -245,6 +245,7 @@
   align-items: center;
   gap: 1vw;
   position: relative;
+  overflow: visible;
   padding: 50px;
   cursor: pointer;
   transition: 2s ease;
@@ -327,8 +328,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  filter: blur(5px);
+  min-height: 100vh;
+  min-width: 100vw;
+  filter: blur(7.5px);
 }
 
 .specs .specsFooter {

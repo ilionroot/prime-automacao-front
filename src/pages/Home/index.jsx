@@ -29,6 +29,82 @@ const Home = () => {
   let isHide1 = useRef(true);
   let noLag = useRef(1);
 
+  function scrollAnimation() {
+    switch (noLag.current) {
+      case 0:
+        if (
+          Math.round(
+            $("#second-container").offset().top - window.innerHeight * 0.35
+          ) >
+            Math.round(secondContainer.current * 0.059083048224831) - 20 &&
+          Math.round(
+            $("#second-container").offset().top - window.innerHeight * 0.35
+          ) <
+            Math.round(secondContainer.current * 0.059083048224831) + 20
+        ) {
+          isHide.current = !isHide.current;
+        }
+
+        if (
+          Math.round(
+            $("#third-container").offset().top - window.innerHeight * 0.2
+          ) >
+            Math.round(thirdContainer.current * 0.059083048224831) - 20 &&
+          Math.round(
+            $("#third-container").offset().top - window.innerHeight * 0.2
+          ) <
+            Math.round(thirdContainer.current * 0.059083048224831) + 20
+        ) {
+          isHide1.current = !isHide1.current;
+        }
+
+        if (!isHide.current) {
+          $("#logoIconGrid").css("opacity", 1);
+          $("#logoIconGrid").css("transform", "translateY(0)");
+
+          $("#t1").css("opacity", 1);
+          $("#t1").css("transform", "scale(1)");
+          $("#t2").css("opacity", 1);
+          $("#t2").css("transform", "scale(1)");
+          $("#continue").css("opacity", 1);
+          $("#continue").css("transform", "scale(1)");
+          $("#t3").css("opacity", 1);
+          $("#t3").css("transform", "scale(1)");
+          $("#t4").css("opacity", 1);
+          $("#t4").css("transform", "scale(1)");
+        }
+
+        if (!isHide1.current) {
+          $("#spec1").css("transform", "scale(1)");
+          $("#spec1").css("opacity", 1);
+          $("#spec2").css("transform", "scale(1)");
+          $("#spec2").css("opacity", 1);
+          $("#spec3").css("transform", "scale(1)");
+          $("#spec3").css("opacity", 1);
+          $("#spec4").css("transform", "scale(1)");
+          $("#spec4").css("opacity", 1);
+          setTimeout(() => {
+            $(".specs").css("transition", "0.2s");
+          }, 1500);
+        }
+
+        noLag.current = 1;
+        break;
+
+      case 1:
+        noLag.current = 2;
+        break;
+
+      case 2:
+        noLag.current = 0;
+        break;
+
+      default:
+        alert("Pare de mexer!");
+        break;
+    }
+  }
+
   const handleGoAheadClick = () => {
     $("html, body").animate(
       {
@@ -37,6 +113,8 @@ const Home = () => {
       },
       1000
     );
+
+    scrollAnimation();
   };
 
   const handleContinueClick = () => {
@@ -48,6 +126,8 @@ const Home = () => {
       },
       1000
     );
+
+    scrollAnimation();
   };
 
   useEffect(() => {
@@ -103,85 +183,11 @@ const Home = () => {
       });
 
       secondContainer.current =
-        $("#second-container").offset().top - window.innerHeight * 0.15;
+        $("#second-container").offset().top - window.innerHeight * 0.35;
       thirdContainer.current =
         $("#third-container").offset().top - window.innerHeight * 0.2;
 
-      $("body, html").on("scroll", () => {
-        switch (noLag.current) {
-          case 0:
-            if (
-              Math.round(
-                $("#second-container").offset().top - window.innerHeight * 0.15
-              ) >
-                Math.round(secondContainer.current * 0.059083048224831) - 20 &&
-              Math.round(
-                $("#second-container").offset().top - window.innerHeight * 0.15
-              ) <
-                Math.round(secondContainer.current * 0.059083048224831) + 20
-            ) {
-              isHide.current = !isHide.current;
-            }
-
-            if (
-              Math.round(
-                $("#third-container").offset().top - window.innerHeight * 0.2
-              ) >
-                Math.round(thirdContainer.current * 0.059083048224831) - 20 &&
-              Math.round(
-                $("#third-container").offset().top - window.innerHeight * 0.2
-              ) <
-                Math.round(thirdContainer.current * 0.059083048224831) + 20
-            ) {
-              isHide1.current = !isHide1.current;
-            }
-
-            if (!isHide.current) {
-              $("#logoIconGrid").css("opacity", 1);
-              $("#logoIconGrid").css("transform", "translateY(0)");
-
-              $("#t1").css("opacity", 1);
-              $("#t1").css("transform", "scale(1)");
-              $("#t2").css("opacity", 1);
-              $("#t2").css("transform", "scale(1)");
-              $("#continue").css("opacity", 1);
-              $("#continue").css("transform", "scale(1)");
-              $("#t3").css("opacity", 1);
-              $("#t3").css("transform", "scale(1)");
-              $("#t4").css("opacity", 1);
-              $("#t4").css("transform", "scale(1)");
-            }
-
-            if (!isHide1.current) {
-              $("#spec1").css("transform", "scale(1)");
-              $("#spec1").css("opacity", 1);
-              $("#spec2").css("transform", "scale(1)");
-              $("#spec2").css("opacity", 1);
-              $("#spec3").css("transform", "scale(1)");
-              $("#spec3").css("opacity", 1);
-              $("#spec4").css("transform", "scale(1)");
-              $("#spec4").css("opacity", 1);
-              setTimeout(() => {
-                $(".specs").css("transition", "0.2s");
-              }, 1500);
-            }
-
-            noLag.current = 1;
-            break;
-
-          case 1:
-            noLag.current = 2;
-            break;
-
-          case 2:
-            noLag.current = 0;
-            break;
-
-          default:
-            alert("Pare de mexer!");
-            break;
-        }
-      });
+      $("body, html").on("scroll", scrollAnimation);
 
       const products = [...document.querySelectorAll(".specs")];
       products.forEach((e, i) => {
