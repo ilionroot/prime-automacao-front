@@ -131,6 +131,11 @@ const Home = () => {
   };
 
   useEffect(() => {
+    secondContainer.current =
+      $("#second-container").offset().top - window.innerHeight * 0.35;
+    thirdContainer.current =
+      $("#third-container").offset().top - window.innerHeight * 0.2;
+      
     (async () => {
       const initialImages = () => {
         $("#menu1").css("transform", "scale(1)");
@@ -181,11 +186,6 @@ const Home = () => {
           $(e).css("transform", "scale(1)");
         });
       });
-
-      secondContainer.current =
-        $("#second-container").offset().top - window.innerHeight * 0.35;
-      thirdContainer.current =
-        $("#third-container").offset().top - window.innerHeight * 0.2;
 
       $("body, html").on("scroll", scrollAnimation);
 
@@ -330,10 +330,6 @@ const Home = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // background: `url(${thirdContainerBackgroundImage})`,
-          // backgroundSize: 'cover',
-          // backgroundRepeat: 'no-repeat',
-          // backgroundPosition: 'center center',
         }}
       >
         <img src={thirdContainerBackgroundImage} alt="background"/>
