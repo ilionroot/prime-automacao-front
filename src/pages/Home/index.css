@@ -273,6 +273,7 @@
   cursor: pointer;
   opacity: 0;
   margin: 2.5vw;
+  transform: scale(0);
 }
 
 #spec1 {
@@ -281,17 +282,14 @@
 
 #spec2 {
   transition: 1s ease;
-  transform: scale(0);
 }
 
 #spec3 {
   transition: 1.25s ease;
-  transform: scale(0);
 }
 
 #spec4 {
   transition: 1.5s ease;
-  transform: scale(0);
 }
 
 .specs .specsImage {
